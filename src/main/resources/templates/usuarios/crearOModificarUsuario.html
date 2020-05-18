@@ -1,0 +1,48 @@
+<html xmlns:th="https://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: layout (~{::body},'usuarios')}">
+
+<body>
+
+<h2>Usuario</h2>
+<form th:object="${usuario}" class="form-horizontal" id="add-usuario-form" method="post">
+    <div class="form-group has-feedback">
+        <input
+                th:replace="~{fragments/inputField :: input ('Username', 'username', 'text')}" />
+        <input
+                th:replace="~{fragments/inputField :: input ('Password', 'password', 'text')}" />
+        <input
+                th:replace="~{fragments/inputField :: input ('Correo Electronico', 'email', 'text')}" />
+
+        <input
+                th:replace="~{fragments/inputField :: input ('Nombres', 'nombre', 'text')}" />
+        <input
+                th:replace="~{fragments/inputField :: input ('Apellidos', 'apellidos', 'text')}" />
+        <input
+                th:replace="~{fragments/inputField :: input ('Fecha de Nacimiento', 'fechanac', 'date')}" />
+        <input
+                th:replace="~{fragments/inputField :: input ('Sexo', 'sexo', 'text')}" />
+        <input
+                th:replace="~{fragments/inputField :: input ('Unidad Educativa', 'ueducativa', 'text')}" />
+        <input
+                th:replace="~{fragments/inputField :: input ('Grado', 'grado', 'text')}" />
+        <input
+                th:replace="~{fragments/inputField :: input ('Nivel', 'nivel', 'text')}" />
+        <input
+                th:replace="~{fragments/inputField :: input ('Departamento', 'dpto', 'text')}" />
+        <input
+                th:replace="~{fragments/inputField :: input ('Provincia', 'provincia', 'text')}" />
+        <input
+                th:replace="~{fragments/inputField :: input ('Localidad', 'localidad', 'text')}" />
+        <input
+                th:replace="~{fragments/inputField :: input ('Descripcion', 'descripcion', 'text')}" />
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button
+                    th:with="text=${usuario['new']} ? 'Ingresar' : 'Actualizar'"
+                    class="btn btn-default" type="submit" th:text="${text}">Ingresar Usuario</button>
+        </div>
+    </div>
+</form>
+</body>
+</html>

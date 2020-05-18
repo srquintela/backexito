@@ -1,0 +1,21 @@
+================================================================================
+===        Base de Datos ExitoDB para ExitoApp - MySQL Configuration         ===
+================================================================================
+
+1) Descargar e instalar MySQL database (e.g., MySQL Community Server 5.1.x),
+   desde este sitio web: https://dev.mysql.com/downloads/. O ejecutar
+   "docker-compose.yml" desde la raiz del proyecto (si se esta usando docker):
+
+        $ docker-compose up
+        ...
+        mysql_1_eedb4818d817 | MySQL init process done. Ready for start up.
+        ...
+
+2) (Solo una vez) crear la Base de Datos y el usuario ejecutando el script "db/mysql/user.sql"
+   Se puede conectar a la Base de Datos en un contenedor Docker ejectuando el comando
+   `mysql -u root -h localhost --protocol tcp`, pero no se necesita ejecutar el script
+   porque el usuario exitodb ya se encuentra registrado si se usó `docker-compose.yaml`.
+
+3) Añadir la línea `spring.profiles.active=mysql` en el archivo
+    src/main/resources/application.properties
+

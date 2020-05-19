@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaf.org"
+  th:replace="~{fragments/layout :: layout (~{::body},'usuarios')}">
+
+  <body>
+
+
+    <h2>Detalles del Usuario</h2>
+
+
+    <table class="table table-striped" th:object="${usuario}">
+    <tr>
+         <th>Username</th>
+            <td th:text="*{username}" /></td>
+    </tr>
+    <tr>
+         <th>Unidad Educativa</th>
+            <td th:text="*{ueducativa}" /></td>
+    </tr>
+    <tr>
+        <th>Nombre Completo</th>
+        <td><b th:text="*{nombre + ' ' + apellidos}"></b></td>
+    </tr>
+    <tr>
+        <th>Fecha de Nacimiento</th>
+        <td th:text="*{fechanac}" /></td>
+    </tr>
+    <tr>
+        <th>Sexo</th>
+        <td th:text="*{sexo}" /></td>
+    </tr>
+    <tr>
+        <th>Unidad Educativa</th>
+        <td th:text="*{ueducativa}" /></td>
+    </tr>
+    <tr>
+        <th>Grado</th>
+        <td th:text="*{grado}" /></td>
+    </tr>
+    <tr>
+        <th>Nivel</th>
+        <td th:text="*{nivel}" /></td>
+    </tr>
+    <tr>
+        <th>Departamento</th>
+        <td th:text="*{dpto}" /></td>
+    </tr>
+    <tr>
+        <th>Provincia</th>
+        <td th:text="*{provincia}" /></td>
+    </tr>
+    <tr>
+        <th>Localidad</th>
+        <td th:text="*{localidad}" /></td>
+    </tr>
+    <tr>
+        <th>Descripción</th>
+        <td th:text="*{ueducativa}" /></td>
+    </tr>
+    </table>
+
+    <a th:href="@{{id}/edit(id=${usuario.id})}" class="btn btn-default">Modificar Usuario</a>
+
+
+
+  </body>
+
+</html>

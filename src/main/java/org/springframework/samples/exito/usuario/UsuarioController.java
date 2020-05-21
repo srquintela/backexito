@@ -171,6 +171,12 @@ class UsuarioController {
 		return respuesta;
 	}
 
+    @GetMapping("/usuarios/listarusuarios")
+    public @ResponseBody Collection<Usuario> listarUsuario() {
+        Collection<Usuario> results = this.usuarios.listAll();
+        return results;
+    }
+
 	/* Modulo Decision */
 	@PostMapping("/usuarios/editardecision")
 	public @ResponseBody Decision editarDecision(@RequestBody Decision decision) {
@@ -192,6 +198,12 @@ class UsuarioController {
 		return test.size();
 	}
 
+    @GetMapping("/usuarios/listardecision")
+    public @ResponseBody Collection<Decision> listarDecision() {
+        Collection<Decision> results = this.decisionRepository.listarDecision();
+        return results;
+    }
+
 	/* Modulo Razonamiento */
 	@PostMapping("/usuarios/editarrazon")
 	public @ResponseBody Razonamiento editarRazon(@RequestBody Razonamiento razonamiento) {
@@ -203,6 +215,12 @@ class UsuarioController {
 		return razonamiento;
 	}
 
+    @GetMapping("/usuarios/listarrazonamiento")
+    public @ResponseBody Collection<Razonamiento> listarRazonamiento() {
+        Collection<Razonamiento> results = this.razonamientoRepository.listarRazonamiento();
+        return results;
+    }
+
 	/* Modulo identidad */
 	@PostMapping("/usuarios/editariden")
 	public @ResponseBody Identidad editarIdentidad(@RequestBody Identidad identidad) {
@@ -213,6 +231,12 @@ class UsuarioController {
 		log.info("Objeto Guardado para usuario: ", identidad.getUsuario());
 		return identidad;
 	}
+
+    @GetMapping("/usuarios/listaridentidad")
+    public @ResponseBody Collection<Identidad> listarIdentidad() {
+        Collection<Identidad> results = this.identidadRepository.listarIdentidad();
+        return results;
+    }
 
 	/* Modulo Personalidad */
 	@PostMapping("/usuarios/editarperso")
@@ -230,6 +254,12 @@ class UsuarioController {
 		return this.personalidadRepository.buscarPorUser(username);
 	}
 
+    @GetMapping("/usuarios/listarpersonalidad")
+    public @ResponseBody Collection<Personalidad> listarPersonalidad() {
+        Collection<Personalidad> results = this.personalidadRepository.listarPersonalidad();
+        return results;
+    }
+
 	/* Modulo Carrera */
 	@PostMapping("/usuarios/obtienecarreras")
 	public @ResponseBody ArrayList<Carrera> obtieneCarreras(@RequestBody Carrera carrera) {
@@ -241,5 +271,18 @@ class UsuarioController {
 		log.info("Objetos encontrados", listaCarreras.size());
 		return listaCarreras;
 	}
+
+    @GetMapping("/usuarios/carreras")
+    public String processCarreras(Map<String, Object> model) {
+        Collection<Carrera> results = this.carreraRepository.listarCarreras();
+        model.put("selections", results);
+        return "usuarios/carrerasLista";
+    }
+
+    @GetMapping("/usuarios/listarcarreras")
+    public @ResponseBody Collection<Carrera> listarCarreras() {
+        Collection<Carrera> results = this.carreraRepository.listarCarreras();
+        return results;
+    }
 
 }

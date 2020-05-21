@@ -26,6 +26,10 @@ public interface UsuarioRepository extends Repository<Usuario, Integer> {
 	@Transactional(readOnly = true)
 	Usuario findById(@Param("id") Integer id);
 
+    @Query("SELECT u FROM Usuario u")
+    @Transactional(readOnly = true)
+	Collection<Usuario> listAll();
+
 	void save(Usuario usuario);
 
 }

@@ -52,7 +52,7 @@ INSERT INTO visits VALUES (2, 8, '2013-01-02', 'rabies shot');
 INSERT INTO visits VALUES (3, 8, '2013-01-03', 'neutered');
 INSERT INTO visits VALUES (4, 7, '2013-01-04', 'spayed');
 
-INSERT INTO usuarios VALUES (1, 'jperez', 'password', 'DonBosco', 'Juan', 'Perez', '2000-06-24', 'masculino', '6to', 'secundaria', 'La Paz', 'Murillo', 'Ciudad de La Paz', 'descripcion aqui', 'jperez@mail.com');
+
 
 INSERT INTO promedios VALUES (1, '2013-01-04', 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3);
 
@@ -409,6 +409,6 @@ INSERT INTO carrera VALUES (359, 'licenciatura', 'Ingeniería en Producción Agr
 INSERT INTO carrera VALUES (360, 'licenciatura', 'Arquitectura', 'Oruro', 'Ciudad de Oruro', 'Universidad Técnica de Oruro', 'UTO', 'Humanidades', 'Publico');
 
 
-
+INSERT INTO usuarios VALUES (1, 'jperez', 'password', 'DonBosco', 'Juan', 'Perez', '2000-06-24', 'masculino', '6to', 'secundaria', 'La Paz', 'Murillo', 'Ciudad de La Paz', 'descripcion aqui', 'jperez@mail.com');
 
 
